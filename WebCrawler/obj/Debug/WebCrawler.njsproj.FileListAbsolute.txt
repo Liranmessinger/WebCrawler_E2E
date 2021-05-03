@@ -1,0 +1,3 @@
+C:\Users\LIRANMES\Documents\Projects\Crawler\WebCrawler\obj\Debug\WebCrawler.njsprojAssemblyReference.cache
+C:\Users\LIRANMES\Documents\Projects\Crawler\WebCrawler\obj\Debug\WebCrawler.njsproj.CoreCompileInputs.cache
+C:\Users\LIRANMES\Documents\Projects\Crawler\WebCrawler\bin\Microsoft.NodejsTools.WebRole.dll

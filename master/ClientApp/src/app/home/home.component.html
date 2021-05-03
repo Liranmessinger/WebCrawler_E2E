@@ -1,0 +1,8 @@
+<p>Welcome to your new Web Crawler</p>
+<div class="container border border-primary">
+    <div class="form-group">
+        <label for="exampleInputEmail1">please add your urls with (,) seprators</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Urls" id="urlsTxb" [(ngModel)]="urls">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="onSubmitUrls()" style="margin-bottom: 10px;">Submit</button>
+</div>

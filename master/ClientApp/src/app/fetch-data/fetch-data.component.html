@@ -1,0 +1,18 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!cacheData"><em>Loading...</em></p>
+<button type="button" class="btn btn-primary" (click)="onRefresh()" style="margin-bottom: 10px;">refresh</button>
+<div class="container border border-primary" *ngIf="cacheData">
+    <h3>Server Data:</h3>
+    <ul *ngFor="let item of cacheData.data">
+        <h4>{{item.domain}}</h4>
+        <li *ngFor="let innerItem of item.crawlerData">
+            <span>uri=> {{innerItem.url}}</span>
+            <div>&nbsp;</div>
+            <span>title=> {{innerItem.title}}</span>
+            <div>&nbsp;</div>
+        </li>
+    </ul>
+</div>
