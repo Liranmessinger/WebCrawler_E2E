@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { CrawlerResponse, CrawlerResponseArray } from '../Models/crawlerResponse';
@@ -23,7 +23,7 @@ export class ProxyService {
 
     getCrawlerData(minutes: number): Observable<CrawlerResponseArray> {
         return this.httpClient.get<CrawlerResponseArray>
-        (this.apiURL + 'api/WebCrawler/getCrawlerData/' + minutes.toString(), this.httpOptions)
+            (this.apiURL + 'api/WebCrawler/getCrawlerData/' + minutes.toString(), this.httpOptions)
             .pipe(
                 retry(1),
                 catchError(this.handleError)
@@ -34,11 +34,11 @@ export class ProxyService {
         return this.httpClient.post(
             this.apiURL + 'api/WebCrawler/postCrawlerData',
             JSON.stringify(data),
-            { ...this.httpOptions, responseType: 'text' });
+            { ...this.httpOptions, responseType: 'text' }).
+            pipe(catchError(this.handleError));
     }
 
-
-    handleError(error) {
+    handleError(error: HttpErrorResponse) {
         let errorMessage = '';
         if (error.error instanceof ErrorEvent) {
             // Get client-side error

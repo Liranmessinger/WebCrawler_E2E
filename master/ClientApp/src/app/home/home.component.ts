@@ -23,6 +23,8 @@ export class HomeComponent {
         alert(res);
         this.urls = '';
         return true;
+      } else {
+        alert('error on process.plz check server logs');
       }
     });
   }

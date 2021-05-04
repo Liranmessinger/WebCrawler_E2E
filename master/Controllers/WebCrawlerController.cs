@@ -34,7 +34,7 @@ namespace master.Controllers
             try
             {
                 if (await base.restManager.GetReponseByUrls(urls))
-                    return Ok("ok");
+                    return Ok("Data have been saved successfully.");
                 else
                     return NotFound();
             }

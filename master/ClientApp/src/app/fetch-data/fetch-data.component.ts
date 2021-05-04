@@ -18,6 +18,8 @@ export class FetchDataComponent {
       if (res != null) {
         this.cacheData = res;
         console.log(this.cacheData);
+      } else {
+        alert('error on process.plz check server logs');
       }
     });
   }
